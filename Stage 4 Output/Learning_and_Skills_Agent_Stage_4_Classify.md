@@ -18,7 +18,7 @@ The workflow baseline used for classification is the Stage 3 decomposition from 
 
 The Stage 4 output identifies nine logical capability agents across Task, Insight, Orchestration, Control and Experience types, and maps them to each workflow step with a control point for every step. [SRC-01, Stage 4 activities items 2, 3 and 6]; [SRC-01, Agent type legend]
 
-Two mandatory Stage 4 inputs could not be evidenced in the workspace: ABBA reuse catalogue and the completed Stage 4 reference example file path. Reuse assessment is therefore logged as constrained and provisional rather than assumed. [SRC-04, Required inputs IN-03 and IN-05]; [SRC-05, Required inputs IN-03 and IN-02]
+One mandatory Stage 4 input could not be evidenced in the workspace: the completed Stage 4 reference example file path. The ABBA reuse catalogue is now available and has been applied to update reuse assessment outcomes with row-level evidence. [SRC-04, Required inputs IN-03 and IN-05]; [SRC-05, Required inputs IN-03 and IN-02]; [SRC-06, rows 2-26, 117-123, 127, 306-312]
 
 This version is finalised for SME review with all currently resolvable quality and consistency actions completed in-repo; remaining open items are explicitly tracked in the Open Questions, Gap Register, and Validation Checklist appendices. [SRC-04, Validation and quality gates before completion]; [SRC-05, Validation and quality assurance checks]
 
@@ -55,17 +55,17 @@ flowchart LR
 
 ## Agent Inventory and Classification
 
-| Agent ID | Agent name | Agent type | Primary scope | Reuse outcome (provisional) | Evidence |
+| Agent ID | Agent name | Agent type | Primary scope | Reuse outcome | Evidence |
 |---|---|---|---|---|---|
-| A-001 | Trigger and Context Intake Agent | Orchestration, Task | Register trigger and initialise case context. | No suitable asset (catalogue unavailable) | [SRC-02, W01]; [SRC-04, IN-03 missing] |
-| A-002 | Input Qualification Agent | Task, Control | Assemble and validate required workforce-development inputs. | No suitable asset (catalogue unavailable) | [SRC-02, W02]; [SRC-03, section 5.2 Inputs] |
-| A-003 | Skills Inference Agent | Insight | Infer demand/supply position as advisory analysis. | New design (provisional) | [SRC-02, W03]; [SRC-03, section 5.2 Deterministic calculation requirements] |
-| A-004 | Deterministic Gap and Route Agent | Task, Insight | Run deterministic `skills_gap` and `dev_route` logic. | Adapted (provisional) | [SRC-02, W04-W05]; [SRC-03, section 3 Tool catalogue] |
-| A-005 | Development Plan Experience Agent | Experience, Orchestration | Prepare human-consumable DevelopmentPlan recommendation. | New design (provisional) | [SRC-02, W06]; [SRC-03, section 5.2 Outputs] |
-| A-006 | Human Governance Router Agent | Control, Orchestration | Route consequential matters to correct human authority. | Adapted (provisional) | [SRC-02, W07]; [SRC-03, section 5.2 Human-in-the-loop boundary] |
-| A-007 | Approval Workflow Agent | Orchestration, Control | Capture explicit HRBP + CLO / L&D decisions and decision evidence. | Adapted (provisional) | [SRC-02, W08]; [SRC-03, section 4.3] |
-| A-008 | Assignment Coordination Agent | Task, Orchestration | Commit approved development route via logical systems of record. | Adapted (provisional) | [SRC-02, W09]; [SRC-03, section 6.2 Systems of record] |
-| A-009 | Outcome Evidence and Learning Agent | Control, Experience | Record confirmation, closure evidence and governance log trail. | Adapted (provisional) | [SRC-02, W10]; [SRC-03, section 4.4 Audit trail schema] |
+| A-001 | Trigger and Context Intake Agent | Orchestration, Task | Register trigger and initialise case context. | Adapted (VA-1088 Learning value stream manager; VA-1129 Development programme orchestrator) | [SRC-06, row 6]; [SRC-06, row 127]; [SRC-02, W01] |
+| A-002 | Input Qualification Agent | Task, Control | Assemble and validate required workforce-development inputs. | Combined (VA-1083 Learning needs analyser; VA-1109 Learning operations compliance monitor) | [SRC-06, row 250]; [SRC-06, row 107]; [SRC-02, W02] |
+| A-003 | Skills Inference Agent | Insight | Infer demand/supply position as advisory analysis. | Adapted (VA-1084 Skill gap identifier; VA-1015 Skills gap analyser; VA-1269 Skill profile matcher) | [SRC-06, row 2]; [SRC-06, row 207]; [SRC-06, row 167]; [SRC-02, W03] |
+| A-004 | Deterministic Gap and Route Agent | Task, Insight | Run deterministic `skills_gap` and `dev_route` logic. | Adapted (VA-1084 Skill gap identifier with deterministic policy thresholds) | [SRC-06, row 2]; [SRC-03, section 5.2 Deterministic calculation requirements]; [SRC-02, W04-W05] |
+| A-005 | Development Plan Experience Agent | Experience, Orchestration | Prepare human-consumable DevelopmentPlan recommendation. | Combined (VA-1123/VA-1235 L&D recommendation agent; VA-1125/VA-1237 Development experience agent) | [SRC-06, row 121]; [SRC-06, row 310]; [SRC-06, row 123]; [SRC-06, row 312]; [SRC-02, W06] |
+| A-006 | Human Governance Router Agent | Control, Orchestration | Route consequential matters to correct human authority. | Combined (VA-1129 Development programme orchestrator; VA-1233 Mobility workflow manager; VA-1124 Development compliance monitor) | [SRC-06, row 127]; [SRC-06, row 308]; [SRC-06, row 122]; [SRC-02, W07] |
+| A-007 | Approval Workflow Agent | Orchestration, Control | Capture explicit HRBP + CLO / L&D decisions and decision evidence. | Adapted (VA-1101 Feedback and certification workflow agent + control adaptation from VA-1124) | [SRC-06, row 19]; [SRC-06, row 122]; [SRC-02, W08] |
+| A-008 | Assignment Coordination Agent | Task, Orchestration | Commit approved development route via logical systems of record. | Combined (VA-1119/VA-1231 Development plan creator; VA-1120/VA-1232 Mentoring matcher; VA-1093 Learning path designer) | [SRC-06, row 117]; [SRC-06, row 306]; [SRC-06, row 118]; [SRC-06, row 307]; [SRC-06, row 11]; [SRC-02, W09] |
+| A-009 | Outcome Evidence and Learning Agent | Control, Experience | Record confirmation, closure evidence and governance log trail. | Combined (VA-1106 Analytics reporter; VA-1089 L&D ROI and impact analytics agent) | [SRC-06, row 24]; [SRC-06, row 7]; [SRC-02, W10] |
 
 ## Framework for Every Agent
 
@@ -180,7 +180,7 @@ flowchart TD
 | Governance fidelity | Are control points and human boundaries complete and explicit? | Risk and governance SME | Pending | [SRC-01, activity 6]; [SRC-03, section 5.2 Human-in-the-loop boundary] |
 | Decision/exception coverage | Are all material branches represented by D and E catalogues? | Capability SME | Pending | [SRC-04, Step 10]; [SRC-05, Decision and exception modelling rules] |
 | Handover clarity | Are handover preconditions, postconditions and failure modes sufficient? | Operating model SME | Pending | [SRC-04, Step 9]; [SRC-05, Handover rules] |
-| Reuse assessment | Is provisional reuse disposition acceptable pending ABBA input availability? | Architecture SME | Pending | [SRC-04, IN-03 missing]; [SRC-05, IN-03 required] |
+| Reuse assessment | Are the ABBA-mapped reuse selections and final candidate preferences acceptable for sign-off? | Architecture SME | Pending | [SRC-06, rows 2-26, 107, 117-123, 127, 167, 207, 250, 306-312]; [SRC-05, Step 5] |
 
 ## SME Confirmation Statements
 
@@ -200,7 +200,7 @@ flowchart TD
 | Exception catalogue | Exception data, escalation and closure modelling. | Ready | Includes containment, escalation and closure criteria. | [SRC-04, Exception Catalogue guidance] |
 | Handover/interaction register | Interface data and state transfer modelling. | Ready | Includes failure modes and control ownership placeholders. | [SRC-04, Handover Register guidance] |
 | Control and approval map | Control-point and approval data model alignment. | Ready | Every workflow step has a control point C-001 to C-010. | [SRC-01, activity 6]; [SRC-01, Outputs of Stage 4] |
-| Reuse assessment and variance log | Supports reuse decisions and variance management in Stage 5+. | Constrained | ABBA catalogue unavailable in current workspace; provisional outcomes recorded. | [SRC-04, IN-03 required]; [SRC-05, Step 5] |
+| Reuse assessment and variance log | Supports reuse decisions and variance management in Stage 5+. | Ready | ABBA catalogue assessed and mapped to A-001 to A-009 with row-level evidence. | [SRC-06, rows 2-26, 107, 117-123, 127, 167, 207, 250, 306-312] |
 | Open items register | Prevents silent carry-over of unresolved dependencies. | Ready | See appendices for assumptions, constraints, questions and gaps. | [SRC-04, Quality gate 7] |
 
 # Appendices
@@ -214,32 +214,32 @@ flowchart TD
 | SRC-03 | HR Capability and Full Agent Catalogue v1 | Learning-and-Skills-agent/HR_Capability_and_Full_Agent_Catalogue_v1.md | Authoritative capability facts, controls, deterministic logic and owner patterns. | 2 | Available | [SRC-03, section 5.2 and section 6.2] |
 | SRC-04 | HR Stage 4 Instructions | Learning-and-Skills-agent/HR_Stage4_Instructions.md | Mandatory structure, quality gates, identifiers, citation rules and output standard. | 2 | Available | [SRC-04, Required section guidance and validation gates] |
 | SRC-05 | HR Stage 4 Skill | Learning-and-Skills-agent/HR_Stage4_Skills.md | Stage 4 generation workflow, modelling rules and mandatory appendix order. | 2 | Available | [SRC-05, Stage 4 workflow and deliverables; Suggested appendix order] |
-| SRC-06 | ABBA reuse catalogue | Reference/ABBA-Reuse Agents/Annotated_Agents_H2RList.csv | Required for reuse assessment. | 3 | Not available in workspace | [SRC-04, IN-03]; [SRC-05, IN-03] |
+| SRC-06 | ABBA reuse catalogue | ABBA-Reuse-Agents/Annotated_Agents_H2RList.csv | Required for reuse assessment. | 3 | Available | [SRC-06, rows 2-26, 107, 117-123, 127, 167, 207, 250, 306-312] |
 | SRC-07 | Completed Stage 4 example | Reference/PAA-Deliverables/Stage4/Payroll_Assurance_Agent_Stage_4_Classify_Capability_Based.md | Structural reference comparator only. | 4 | Not available in workspace | [SRC-04, IN-05]; [SRC-05, IN-02] |
 
 ## 2. Reuse Assessment and Variance Log
 
 | Reuse ID | Workflow area | Candidate logical capability | ABBA match evidence | Reuse outcome | Variance from requirement | Impact | Evidence |
 |---|---|---|---|---|---|---|---|
-| R-001 | Trigger and input preparation | A-001, A-002 | ABBA catalogue not available. | No suitable asset (provisional) | Reuse evidence unavailable. | Medium | [SRC-06, unavailable]; [SRC-04, IN-03] |
-| R-002 | Inference and deterministic logic | A-003, A-004 | ABBA catalogue not available. | Adapted/New design (provisional) | Deterministic tools evidenced, but no reusable asset record provided. | Medium | [SRC-03, section 3 Tool catalogue]; [SRC-06, unavailable] |
-| R-003 | Recommendation and routing | A-005, A-006 | ABBA catalogue not available. | Adapted/New design (provisional) | Governance routing logic present; reuse proof absent. | Medium | [SRC-02, W06-W07]; [SRC-06, unavailable] |
-| R-004 | Approval and assignment | A-007, A-008 | ABBA catalogue not available. | Adapted (provisional) | SoD and approval pattern evidenced; ABBA mapping absent. | Low | [SRC-03, section 4.3]; [SRC-06, unavailable] |
-| R-005 | Closure evidence and learning | A-009 | ABBA catalogue not available. | Adapted (provisional) | Audit-trail pattern evidenced; no catalogue-level reuse proof. | Low | [SRC-03, section 4.4]; [SRC-06, unavailable] |
+| R-001 | Trigger and input preparation | A-001, A-002 | VA-1088 Learning value stream manager; VA-1129 Development programme orchestrator; VA-1083 Learning needs analyser; VA-1109 Learning operations compliance monitor | Adapted + Combined | Stage 4 uses control-point granularity and ownership model not fully explicit in ABBA entries. | Low | [SRC-06, row 6]; [SRC-06, row 127]; [SRC-06, row 250]; [SRC-06, row 107] |
+| R-002 | Inference and deterministic logic | A-003, A-004 | VA-1084 Skill gap identifier; VA-1015 Skills gap analyser; VA-1269 Skill profile matcher | Adapted | ABBA entries do not encode the exact deterministic threshold logic; deterministic route logic remains capability-specific. | Medium | [SRC-06, row 2]; [SRC-06, row 207]; [SRC-06, row 167]; [SRC-03, section 5.2 Deterministic calculation requirements] |
+| R-003 | Recommendation and routing | A-005, A-006 | VA-1123/VA-1235 L&D recommendation agent; VA-1125/VA-1237 Development experience agent; VA-1124 Development compliance monitor; VA-1233 Mobility workflow manager | Combined | Stage 4 separates recommendation, governance routing, and consequential escalation as distinct control steps. | Medium | [SRC-06, row 121]; [SRC-06, row 310]; [SRC-06, row 123]; [SRC-06, row 312]; [SRC-06, row 122]; [SRC-06, row 308] |
+| R-004 | Approval and assignment | A-007, A-008 | VA-1101 Feedback and certification workflow agent; VA-1119/VA-1231 Development plan creator; VA-1120/VA-1232 Mentoring matcher; VA-1093 Learning path designer | Combined | Human-approval evidence capture and SoD controls are explicit in Stage 4 and extend ABBA workflow patterns. | Low | [SRC-06, row 19]; [SRC-06, row 117]; [SRC-06, row 306]; [SRC-06, row 118]; [SRC-06, row 307]; [SRC-06, row 11] |
+| R-005 | Closure evidence and learning | A-009 | VA-1106 Analytics reporter; VA-1089 L&D ROI and impact analytics agent | Adapted | Stage 4 adds controlled-hold closure logic and governance traceability expectations beyond base ABBA analytics roles. | Low | [SRC-06, row 24]; [SRC-06, row 7]; [SRC-02, W10] |
 
 ## 3. Assumptions Register
 
 | Assumption ID | Assumption | Rationale | Impact if false | Evidence |
 |---|---|---|---|---|
 | ASM-001 | Stage 3 W-001 to W-010 sequence is the baseline for Stage 4 classification. | Stage 4 input depends on Stage 3 decomposition outputs. | Workflow and catalogues require remapping. | [SRC-01, Inputs from Stage 3]; [SRC-02, section 6.2] |
-| ASM-002 | Provisional reuse outcomes are acceptable until ABBA source is provided. | Mandatory input missing in workspace. | Reuse outcomes must be reworked after ABBA review. | [SRC-04, IN-03]; [SRC-05, IN-03] |
+| ASM-002 | ABBA candidate mapping is performed by logical capability fit because ABBA taxonomy (Task/Process/Function/Value Stream/Control/Experience) differs from Stage 4 output taxonomy (Task/Insight/Orchestration/Control/Experience). | Source taxonomies differ and require transparent mapping. | Mapping may be refined after SME calibration of classification boundaries. | [SRC-01, Agent type legend]; [SRC-06, rows 2-26, 117-123, 127, 306-312] |
 | ASM-003 | Ownership placeholders remain unresolved and are not to be fabricated. | Ownership distinctions are mandatory and evidence-sensitive. | Governance quality risk if assumed incorrectly. | [SRC-04, Ownership terminology rules]; [SRC-05, Ownership terminology rules] |
 
 ## 4. Constraints Register
 
 | Constraint ID | Constraint | Impact on completeness | Evidence |
 |---|---|---|---|
-| CON-001 | ABBA reuse catalogue file not available in current workspace. | Reuse outcomes are provisional and require follow-up validation. | [SRC-04, IN-03]; [SRC-05, IN-03] |
+| CON-001 | ABBA contains overlapping or duplicate-like candidate entries (for example paired entries in 04.03 Talent Development), so final reuse selection requires SME preference and standardisation. | Reuse mapping is evidence-backed but some candidate choices remain preference-driven. | [SRC-06, row 117]; [SRC-06, row 306]; [SRC-06, row 121]; [SRC-06, row 310] |
 | CON-002 | Completed Stage 4 example file not available in current workspace. | Structural comparison limited to instruction and skill guidance only. | [SRC-04, IN-05]; [SRC-05, IN-02] |
 | CON-003 | Specific data-owner, steward and source-system-owner evidence is incomplete in source pack. | Ownership fields remain unresolved and flagged in open questions and gaps. | [SRC-02, DEP-01 to DEP-08]; [SRC-04, Ownership terminology rules] |
 | CON-004 | Mermaid rendered validation tool was not available in this task context. | Static syntax checks applied; rendered parser validation logged as pending. | [SRC-04, Mermaid authoring and validation rules]; [SRC-05, Mermaid authoring and validation rules] |
@@ -257,7 +257,7 @@ flowchart TD
 
 | Gap ID | Gap description | Impacted section(s) | Impact on confidence/completeness | Resolution action | Evidence |
 |---|---|---|---|---|---|
-| GAP-001 | Missing ABBA reuse catalogue prevents evidence-based reuse matching. | Overall AI Framework; Appendix 2 | Medium confidence on reuse outcomes | Provide ABBA file and rerun reuse assessment. | [SRC-04, IN-03]; [SRC-05, Step 5] |
+| GAP-001 | Final preference selection among overlapping ABBA candidates is not yet SME-confirmed. | Overall AI Framework; Appendix 2 | Low to medium confidence on final candidate precedence, while reuse evidence itself is present. | Run SME selection workshop and lock preferred ABBA variants per agent. | [SRC-06, row 117]; [SRC-06, row 306]; [SRC-06, row 121]; [SRC-06, row 310] |
 | GAP-002 | Missing reference Stage 4 example limits direct structural comparator checks. | Document presentation benchmarking | Low impact due full instruction/skill guidance available | Add reference example and perform comparator pass. | [SRC-04, IN-05]; [SRC-05, IN-02] |
 | GAP-003 | Named ownership metadata incomplete for data and source-system roles. | Workflow Decomposition Catalogue; Handover Register | Medium governance confidence | Confirm owners and update catalogues. | [SRC-04, Ownership terminology rules]; [SRC-02, dependency notes] |
 | GAP-004 | SME confirmation outcomes not yet recorded. | SME Validation and Confirmation | Deliverable remains draft for review | Run SME walkthrough and capture approvals. | [SRC-04, Step 12]; [SRC-05, Step 12] |
