@@ -7,34 +7,49 @@
 
 ---
 
-## 1. Purpose
+## Overview
 
-This repository contains the staged delivery artefacts, governance documents, source instructions, and consolidated outputs used to design, validate, and evidence the Learning and Skills Agent. It is intended to support controlled solution development, traceable design consolidation, and formal review across the delivery lifecycle.
+This repository contains the staged delivery artefacts, governance documents, source instructions, and consolidated outputs used to design, validate, and evidence the Learning and Skills Agent.
 
-The repository is structured to preserve provenance from early-stage decomposition through detailed design and Stage 6B consolidation, including control mapping, test coverage, workflow assurance, and readiness assessment.
+It is structured to preserve provenance from early-stage decomposition through detailed design and Stage 6B consolidation, including control mapping, test coverage, workflow assurance, and readiness assessment.
+
+This repository is primarily an **artefact repository**, not a runtime application codebase. Its value lies in design provenance, control evidence, and formal delivery traceability.
 
 ---
 
-## 2. Governance and Classification
+## Purpose
 
-### 2.1 Classification
+The repository supports the end-to-end solution design and delivery narrative for the Learning and Skills Agent across the following stages:
+
+1. **Stage 3** — decomposition of the agent and initial structural framing  
+2. **Stage 4** — classification and orchestration definition  
+3. **Stage 5** — model definition  
+4. **Stage 5B** — model and data model consolidation  
+5. **Stage 6** — detailed design  
+6. **Stage 6B** — consolidated solution design and readiness assessment  
+
+The repository preserves the lineage from source guidance to consolidated outputs so that delivery artefacts remain explainable, auditable, and governed.
+
+---
+
+## Governance and Classification
+
+### Classification
 All material in this repository should be treated as **KPMG confidential** unless explicitly marked otherwise within a source artefact or approved downstream deliverable.
 
-### 2.2 Governance principles
-The repository is governed by the following principles:
-
+### Governance principles
 - Maintain traceability from source guidance through to consolidated outputs.
-- Preserve stage boundaries and do not overwrite historical stage artefacts unless a controlled revision is required.
+- Preserve stage boundaries and do not overwrite historical stage artefacts unless controlled revision is required.
 - Retain evidence references, approval status, and decision rationale in all consolidated deliverables.
 - Use only approved source artefacts for consolidation, referencing, and downstream design interpretation.
 - Treat readiness conclusions as governance outcomes, not implementation approvals, unless formal Design Authority approval is recorded.
 
-### 2.3 Approval expectations
-Where deliverables reference Design Authority, SME review, role ownership, or validation evidence, such references must be supported by authoritative artefacts. If evidence is absent, the deliverable should remain marked as pending, not build ready, or otherwise constrained by the relevant control record.
+### Approval expectations
+Where deliverables reference Design Authority, SME review, role ownership, or validation evidence, those references must be supported by authoritative artefacts. If evidence is absent, the deliverable should explicitly record the gap.
 
 ---
 
-## 3. Repository Structure
+## Repository Structure
 
 ```text
 ABBA-Reuse-Agents/        Reuse inventory and agent catalogue references
@@ -50,24 +65,9 @@ README.md                 Repository overview and governance summary
 
 ---
 
-## 4. Delivery Scope
+## Key Artefact Sets
 
-This repository supports the end-to-end solution design and delivery narrative for the Learning and Skills Agent across the following stages:
-
-1. **Stage 3** — decomposition of the agent and initial structural framing
-2. **Stage 4** — classification and orchestration definition
-3. **Stage 5** — model definition
-4. **Stage 5B** — model and data model consolidation
-5. **Stage 6** — detailed design
-6. **Stage 6B** — consolidated solution design and readiness assessment
-
-The repository is primarily an artefact repository rather than a runtime application codebase. Its value lies in design provenance, control evidence, and formal delivery traceability.
-
----
-
-## 5. Key Artefact Sets
-
-### 5.1 `Learning-and-Skills-agent/`
+### `Learning-and-Skills-agent/`
 Contains the principal source instructions and baseline design artefacts used throughout the delivery lifecycle, including:
 
 - Stage 3 decomposition material
@@ -77,42 +77,28 @@ Contains the principal source instructions and baseline design artefacts used th
 - Stage 6 skill definitions
 - Capability and agent catalogue references
 
-### 5.2 `Delivery-Control/`
+### `Delivery-Control/`
 Contains governance and delivery control artefacts, including:
 
 - Stage 3, 4, 5, and 6 methodology documentation
 - Enterprise business data object overview
 - Stage boundary and delivery control references
 
-### 5.3 `ABBA-Reuse-Agents/`
+### `ABBA-Reuse-Agents/`
 Contains reuse evidence and reference materials used to support the solution design and catalogue alignment.
 
-### 5.4 `Stage 4 Output/`
-Contains Stage 4 classification and orchestration deliverables.
+### Stage output folders
+These folders contain the staged outputs and consolidated deliverables produced across the lifecycle:
 
-### 5.5 `Stage 5 Output/`
-Contains Stage 5 model deliverables used as a foundation for subsequent consolidation.
-
-### 5.6 `Stage 5B Output/`
-Contains consolidated model and data model deliverables, including traceability to governing artefacts.
-
-### 5.7 `Stage 6 Output/`
-Contains the Stage 6 detailed design artefact set.
-
-### 5.8 `Stage 6B Output/`
-Contains the consolidated end-to-end Stage 6B design set, including:
-
-- source inventory and evidence map
-- component consolidation matrix
-- control coverage map
-- unit test coverage assessment
-- consolidated issues, risks, and actions log
-- workflow diagrams
-- combined Stage 6B output
+- `Stage 4 Output/` — classification and orchestration deliverables
+- `Stage 5 Output/` — model deliverables used as a foundation for subsequent consolidation
+- `Stage 5B Output/` — consolidated model and data model deliverables
+- `Stage 6 Output/` — detailed design artefact set
+- `Stage 6B Output/` — final consolidated design set and readiness materials
 
 ---
 
-## 6. Stage 6B Consolidation Summary
+## Stage 6B Consolidation Summary
 
 The Stage 6B deliverables consolidate the solution design into a single governed view with the following themes:
 
@@ -127,9 +113,11 @@ Where evidence is incomplete, the consolidated outputs intentionally preserve th
 
 ---
 
-## 7. Readiness and Control Position
+## Readiness and Control Position
 
-The Stage 6B consolidated outputs indicate that the solution is **not build ready** until the applicable governance dependencies are resolved and evidenced. Typical unresolved dependencies include:
+The Stage 6B consolidated outputs indicate that the solution is **not build ready** until the applicable governance dependencies are resolved and evidenced.
+
+Typical unresolved dependencies include:
 
 - Design Authority approval evidence
 - ownership confirmation for selected components and controls
@@ -140,7 +128,7 @@ Until such items are closed or formally waived, the repository should be treated
 
 ---
 
-## 8. Working with the Repository
+## Working With the Repository
 
 When updating or extending the repository:
 
@@ -152,7 +140,7 @@ When updating or extending the repository:
 
 ---
 
-## 9. Licence and Ownership
+## Licence and Ownership
 
 No repository licence has been declared at the time of writing.
 
@@ -160,6 +148,6 @@ Repository ownership and delivery accountability remain with the project or deli
 
 ---
 
-## 10. Contact and Further Information
+## Contact and Further Information
 
 For changes to this repository or for clarification on the delivery artefacts, consult the relevant delivery governance owner, Design Authority, or repository maintainer.
